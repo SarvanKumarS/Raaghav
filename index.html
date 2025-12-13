@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Basic Math Calculator (5 boxes)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Basic Math Calculator</h1>
+
+    <section class="calculator">
+      <form id="calcForm" onsubmit="return false;">
+        <div class="inputs">
+          <div class="input-box">
+            <label for="n1">1</label>
+            <input id="n1" type="number" step="any" placeholder="Enter number" />
+          </div>
+          <div class="input-box">
+            <label for="n2">2</label>
+            <input id="n2" type="number" step="any" placeholder="Enter number" />
+          </div>
+          <div class="input-box">
+            <label for="n3">3</label>
+            <input id="n3" type="number" step="any" placeholder="Enter number" />
+          </div>
+          <div class="input-box">
+            <label for="n4">4</label>
+            <input id="n4" type="number" step="any" placeholder="Enter number" />
+          </div>
+          <div class="input-box">
+            <label for="n5">5</label>
+            <input id="n5" type="number" step="any" placeholder="Enter number" />
+          </div>
+        </div>
+
+        <div class="controls">
+          <label for="operation">Operation</label>
+          <select id="operation">
+            <option value="sum">Sum</option>
+            <option value="average">Average</option>
+            <option value="product">Product</option>
+            <option value="min">Minimum</option>
+            <option value="max">Maximum</option>
+          </select>
+
+          <div class="buttons">
+            <button id="calculateBtn" type="button">Calculate</button>
+            <button id="clearBtn" type="button" class="secondary">Clear</button>
+            <button id="printBtn" type="button" class="secondary">Print Output</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="result-area printable" id="printArea">
+      <h2>Result</h2>
+      <div id="result" class="result">No calculation yet.</div>
+
+      <h3>Inputs</h3>
+      <div id="inputsList" class="inputs-list">—</div>
+
+      <h3>History</h3>
+      <ul id="history" class="history"></ul>
+    </section>
+
+    <footer>
+      <small>Enter up to five numbers, choose an operation, then click Calculate. Print Output will open your print dialog showing only the result area.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
