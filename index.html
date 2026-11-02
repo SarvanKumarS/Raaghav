@@ -1,74 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Basic Math Calculator (5 boxes)</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Travel Details Form</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>Basic Math Calculator</h1>
+  <div class="container">
+    <form id="travelForm">
+      <h1>Employee Travel Information Form</h1>
 
-    <section class="calculator">
-      <form id="calcForm" onsubmit="return false;">
-        <div class="inputs">
-          <div class="input-box">
-            <label for="n1">1</label>
-            <input id="n1" type="number" step="any" placeholder="Enter number" />
-          </div>
-          <div class="input-box">
-            <label for="n2">2</label>
-            <input id="n2" type="number" step="any" placeholder="Enter number" />
-          </div>
-          <div class="input-box">
-            <label for="n3">3</label>
-            <input id="n3" type="number" step="any" placeholder="Enter number" />
-          </div>
-          <div class="input-box">
-            <label for="n4">4</label>
-            <input id="n4" type="number" step="any" placeholder="Enter number" />
-          </div>
-          <div class="input-box">
-            <label for="n5">5</label>
-            <input id="n5" type="number" step="any" placeholder="Enter number" />
-          </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">1. Name</label>
+          <input type="text" id="name" name="name" required />
         </div>
 
-        <div class="controls">
-          <label for="operation">Operation</label>
-          <select id="operation">
-            <option value="sum">Sum</option>
-            <option value="average">Average</option>
-            <option value="product">Product</option>
-            <option value="min">Minimum</option>
-            <option value="max">Maximum</option>
+        <div class="field">
+          <label for="designation">2. Designation</label>
+          <input type="text" id="designation" name="designation" required />
+        </div>
+
+        <div class="field">
+          <label for="employeeId">3. Employee ID</label>
+          <input type="text" id="employeeId" name="employeeId" required />
+        </div>
+
+        <div class="field">
+          <label for="gender">4. Male / Female</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
+        </div>
 
-          <div class="buttons">
-            <button id="calculateBtn" type="button">Calculate</button>
-            <button id="clearBtn" type="button" class="secondary">Clear</button>
-            <button id="printBtn" type="button" class="secondary">Print Output</button>
+        <div class="field full-width">
+          <label for="office">5. Office</label>
+          <input type="text" id="office" name="office" required />
+        </div>
+      </div>
+
+      <fieldset class="section">
+        <legend>6. Expected time of Arrival at Mysore</legend>
+        <div class="inline-fields">
+          <div class="field">
+            <label for="arrivalDate">Date</label>
+            <input type="date" id="arrivalDate" name="arrivalDate" required />
+          </div>
+
+          <div class="field">
+            <label for="arrivalTime">Time</label>
+            <input type="time" id="arrivalTime" name="arrivalTime" required />
+          </div>
+
+          <div class="field">
+            <label for="arrivalMode">Mode of Journey</label>
+            <input type="text" id="arrivalMode" name="arrivalMode" placeholder="Air / Bus / Train & No" required />
           </div>
         </div>
-      </form>
-    </section>
+      </fieldset>
 
-    <section class="result-area printable" id="printArea">
-      <h2>Result</h2>
-      <div id="result" class="result">No calculation yet.</div>
+      <fieldset class="section">
+        <legend>7. Expected time of Departure from Mysore</legend>
+        <div class="inline-fields">
+          <div class="field">
+            <label for="departureDate">Date</label>
+            <input type="date" id="departureDate" name="departureDate" required />
+          </div>
 
-      <h3>Inputs</h3>
-      <div id="inputsList" class="inputs-list">—</div>
+          <div class="field">
+            <label for="departureTime">Time</label>
+            <input type="time" id="departureTime" name="departureTime" required />
+          </div>
 
-      <h3>History</h3>
-      <ul id="history" class="history"></ul>
-    </section>
+          <div class="field">
+            <label for="departureMode">Mode of Journey</label>
+            <input type="text" id="departureMode" name="departureMode" placeholder="Air / Bus / Train & No" required />
+          </div>
+        </div>
+      </fieldset>
 
-    <footer>
-      <small>Enter up to five numbers, choose an operation, then click Calculate. Print Output will open your print dialog showing only the result area.</small>
-    </footer>
-  </main>
+      <div class="form-grid">
+        <div class="field">
+          <label for="contactNumber">8. Contact Number</label>
+          <input type="tel" id="contactNumber" name="contactNumber" required />
+        </div>
+
+        <div class="field">
+          <label for="email">9. Email ID</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="field full-width">
+          <label for="suggestions">10. Suggestions / Medications, if any</label>
+          <textarea id="suggestions" name="suggestions" rows="5" placeholder="Enter any suggestions or medications"></textarea>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="successMessage" class="success-message" hidden>
+      Your information has been submitted successfully.
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
